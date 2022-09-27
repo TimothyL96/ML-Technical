@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.ml
+testFramework: junit
+sourceLanguage: java
+buildTool: gradle
+features: [ annotation-api, app-name, data, data-jdbc, github-workflow-ci, gradle, h2, http-client, java, java-application, jdbc-hikari, junit, liquibase, logback, micronaut-build, mockito, netty-server, openapi, readme, serialization-jackson, shade, yaml ]
