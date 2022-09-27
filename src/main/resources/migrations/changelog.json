@@ -1,0 +1,10 @@
+{
+  "databaseChangeLog": [
+    {
+      "include": {
+        "file": "changelogs/20220928011143-initial.h2.sql",
+        "relativeToChangelogFile": true
+      }
+    }
+  ]
+}

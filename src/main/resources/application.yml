@@ -13,3 +13,15 @@ netty:
   default:
     allocator:
       max-order: 3
+
+# Liquibase
+liquibase:
+  enabled: true
+  datasources:
+    default:
+      change-log: classpath:migrations/changelog.json
+
+endpoints:
+  liquibase:
+    enabled: true
+    sensitive: false
