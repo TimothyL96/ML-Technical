@@ -1,11 +1,13 @@
 ## ML Technical Assessment
 
 [![Java CI with Gradle](https://github.com/TimothyL96/ML-Technical/actions/workflows/gradle.yml/badge.svg)](https://github.com/TimothyL96/ML-Technical/actions/workflows/gradle.yml)
+[![Maintainability](https://api.codeclimate.com/v1/badges/99781e4c1dcc7d590ffe/maintainability)](https://codeclimate.com/github/TimothyL96/ML-Technical/maintainability)
+[![codecov](https://codecov.io/gh/TimothyL96/ML-Technical/branch/master/graph/badge.svg?token=fOMdBiCwEg)](https://codecov.io/gh/TimothyL96/ML-Technical)
 
 ### APIs Requirement:
 
-1. POST /feature
-2. GET /feature?email=XXX&featureName=XXX
+1. **POST** /feature
+2. **GET** /feature?email=XXX&featureName=XXX
 
 OpenAPI Rapidoc: http://localhost:8080/swagger/rapidoc/
 
@@ -21,9 +23,9 @@ username: sa
 password: ''
 ```
 
-### Generating schema:
+### Migration:
 
-Generate migration with diff between a base and a main DB (see gradle.properties):
+Generate changeset of diff between a base and a main DB (see gradle.properties):
 
 `./gradlew liquibaseDiffChangelog -PrunList='diff' -Pdesc=description`
 
