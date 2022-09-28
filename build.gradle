@@ -60,12 +60,14 @@ micronaut {
         annotations("com.ml.*")
     }
 }
+
 build.dependsOn jacocoTestReport
 jacocoTestReport {
     reports {
         xml.required = true
     }
 }
+
 configurations.all {
     resolutionStrategy.dependencySubstitution {
         substitute(module("io.micronaut:micronaut-jackson-databind"))
