@@ -84,7 +84,7 @@ public class FeatureController {
 			@ApiResponse(responseCode = "304", description = "Not modified"),
 	})
 	@Post(value = "/")
-	HttpResponse updateUserFeatureFlag(@Email String email, @NotBlank String featureName, Boolean enable) throws Exception {
+	HttpResponse<?> updateUserFeatureFlag(@Email String email, @NotBlank String featureName, Boolean enable) throws Exception {
 		boolean updated = featureService.updateUserFeatureFlag(email, featureName, enable);
 
 		return updated ? HttpResponse.ok() : HttpResponse.notModified();
