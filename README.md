@@ -1,6 +1,6 @@
 ## ML Technical Assessment
 
-[![Java CI with Gradle (Groovy)](https://github.com/TimothyL96/ML-Technical/actions/workflows/gradle.yml/badge.svg?branch=master)](https://github.com/TimothyL96/ML-Technical/actions/workflows/gradle.yml)
+[![Java CI with Gradle](https://github.com/TimothyL96/ML-Technical/actions/workflows/gradle.yml/badge.svg)](https://github.com/TimothyL96/ML-Technical/actions/workflows/gradle.yml)
 
 #### APIS:
 
@@ -11,11 +11,11 @@ OpenAPI Rapidoc: http://localhost:8080/swagger/rapidoc/
 
 #### Generating schema:
 
-Generate migration diff from a base and new DB (see gradle.properties):
+Generate migration with diff between a base and a main DB (see gradle.properties):
 
 `./gradlew liquibaseDiffChangelog -PrunList='diff' -Pdesc=description`
 
-The application will run with H2 in memory DB.
+The application will run with H2 in-memory DB.
 
 ---
 
