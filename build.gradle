@@ -2,6 +2,8 @@ plugins {
     id("com.github.johnrengelman.shadow") version "7.1.2"
     id("io.micronaut.minimal.application") version "3.6.0"
     id 'org.liquibase.gradle' version '2.1.1'
+    id "jacoco"
+
 }
 
 version = "0.1"
@@ -58,7 +60,12 @@ micronaut {
         annotations("com.ml.*")
     }
 }
-
+build.dependsOn jacocoTestReport
+jacocoTestReport {
+    reports {
+        xml.required = true
+    }
+}
 configurations.all {
     resolutionStrategy.dependencySubstitution {
         substitute(module("io.micronaut:micronaut-jackson-databind"))

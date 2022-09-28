@@ -32,5 +32,5 @@ jobs:
       - uses: codecov/codecov-action@v3
         with:
           verbose: true # optional (default = false)
-          path: |
-            **/build/reports
+          directory: |
+            **/build/reports/jacoco/test
