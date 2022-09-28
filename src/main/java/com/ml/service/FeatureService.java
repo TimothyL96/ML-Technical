@@ -61,7 +61,7 @@ public class FeatureService {
 		else
 			// add feature to user
 			user.getFeatures().add(feature);
-		userRepository.save(user);
+
 		return true;
 	}
 }

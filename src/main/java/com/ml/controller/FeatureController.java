@@ -36,27 +36,6 @@ public class FeatureController {
 		this.featureService = featureService;
 	}
 
-	@ApiResponses({@ApiResponse(responseCode = "200", description = "OK"),
-			@ApiResponse(responseCode = "400", description = "Malformed payload"),
-	})
-	@Get(value = "/", produces = MediaType.APPLICATION_JSON)
-	HttpResponse<UserHasFeatureResponse> getUserFeatureFlag(@Email String email, @NotBlank String featureName) {
-		UserHasFeatureResponse response = featureService.getUserFeatureFlag(email, featureName);
-
-		return HttpResponse.ok(response);
-	}
-
-	@ApiResponses({@ApiResponse(responseCode = "200", description = "OK"),
-			@ApiResponse(responseCode = "400", description = "Malformed payload"),
-			@ApiResponse(responseCode = "304", description = "Not modified"),
-	})
-	@Post(value = "/")
-	HttpResponse<String> updateUserFeatureFlag(@Email String email, @NotBlank String featureName, Boolean enable) throws Exception {
-		boolean updated = featureService.updateUserFeatureFlag(email, featureName, enable);
-
-		return updated ? HttpResponse.ok() : HttpResponse.notModified();
-	}
-
 	/**
 	 * Handle exceptions
 	 *
@@ -83,5 +62,26 @@ public class FeatureController {
 
 		LOG.error(ex.getMessage());
 		return HttpResponse.serverError();
+	}
+
+	@ApiResponses({@ApiResponse(responseCode = "200", description = "OK"),
+			@ApiResponse(responseCode = "400", description = "Malformed payload"),
+	})
+	@Get(value = "/", produces = MediaType.APPLICATION_JSON)
+	HttpResponse<UserHasFeatureResponse> getUserFeatureFlag(@Email String email, @NotBlank String featureName) {
+		UserHasFeatureResponse response = featureService.getUserFeatureFlag(email, featureName);
+
+		return HttpResponse.ok(response);
+	}
+
+	@ApiResponses({@ApiResponse(responseCode = "200", description = "OK"),
+			@ApiResponse(responseCode = "400", description = "Malformed payload"),
+			@ApiResponse(responseCode = "304", description = "Not modified"),
+	})
+	@Post(value = "/")
+	HttpResponse<String> updateUserFeatureFlag(@Email String email, @NotBlank String featureName, Boolean enable) throws Exception {
+		boolean updated = featureService.updateUserFeatureFlag(email, featureName, enable);
+
+		return updated ? HttpResponse.ok() : HttpResponse.notModified();
 	}
 }
