@@ -18,7 +18,7 @@ Access the database through web browser: http://localhost:8082/
 ```
 url: jdbc:h2:mem:devD**b;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
 username: sa
-password: ''**
+password: ''
 ```
 
 ### Generating schema:
