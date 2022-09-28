@@ -12,8 +12,10 @@ import io.micronaut.http.annotation.Error;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Post;
 import io.micronaut.web.router.exceptions.UnsatisfiedRouteException;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller("/feature")
+@Tag(name = "Features")
 public class FeatureController {
 
 	private final Logger LOG = LoggerFactory.getLogger(FeatureController.class);
@@ -64,6 +67,7 @@ public class FeatureController {
 		return HttpResponse.serverError();
 	}
 
+	@Operation(summary = "Retrieve User Feature Flag")
 	@ApiResponses({@ApiResponse(responseCode = "200", description = "OK"),
 			@ApiResponse(responseCode = "400", description = "Malformed payload"),
 	})
@@ -74,12 +78,13 @@ public class FeatureController {
 		return HttpResponse.ok(response);
 	}
 
+	@Operation(summary = "Update User Feature Flag")
 	@ApiResponses({@ApiResponse(responseCode = "200", description = "OK"),
 			@ApiResponse(responseCode = "400", description = "Malformed payload"),
 			@ApiResponse(responseCode = "304", description = "Not modified"),
 	})
 	@Post(value = "/")
-	HttpResponse<String> updateUserFeatureFlag(@Email String email, @NotBlank String featureName, Boolean enable) throws Exception {
+	HttpResponse updateUserFeatureFlag(@Email String email, @NotBlank String featureName, Boolean enable) throws Exception {
 		boolean updated = featureService.updateUserFeatureFlag(email, featureName, enable);
 
 		return updated ? HttpResponse.ok() : HttpResponse.notModified();
