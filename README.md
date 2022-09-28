@@ -2,20 +2,31 @@
 
 [![Java CI with Gradle](https://github.com/TimothyL96/ML-Technical/actions/workflows/gradle.yml/badge.svg)](https://github.com/TimothyL96/ML-Technical/actions/workflows/gradle.yml)
 
-#### APIS:
+### APIs Requirement:
 
 1. POST /feature
 2. GET /feature?email=XXX&featureName=XXX
 
 OpenAPI Rapidoc: http://localhost:8080/swagger/rapidoc/
 
-#### Generating schema:
+### Database:
+
+The application is using H2 in-memory DB.
+
+Access the database through web browser: http://localhost:8082/
+
+```
+url: jdbc:h2:mem:devD**b;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+username: sa
+password: ''**
+```
+
+### Generating schema:
 
 Generate migration with diff between a base and a main DB (see gradle.properties):
 
 `./gradlew liquibaseDiffChangelog -PrunList='diff' -Pdesc=description`
 
-The application will run with H2 in-memory DB.
 
 ---
 
