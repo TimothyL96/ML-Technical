@@ -20,13 +20,13 @@ datasources:
     dialect: H2
     formatSql: true
   # Test only
-  mysql:
-    url: jdbc:mysql://localhost:3306/${dbname:ml}?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&useTimezone=true&serverTimezone=UTC
-    username: root
-    password: root
-    driverClassName: com.mysql.cj.jdbc.Driver
-    schema-generate: NONE
-    dialect: MYSQL
+#  mysql:
+#    url: jdbc:mysql://localhost:3306/${dbname:ml}?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&useTimezone=true&serverTimezone=UTC
+#    username: root
+#    password: root
+#    driverClassName: com.mysql.cj.jdbc.Driver
+#    schema-generate: NONE
+#    dialect: MYSQL
 
 netty:
   default:
