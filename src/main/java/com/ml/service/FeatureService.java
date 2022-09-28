@@ -34,6 +34,13 @@ public class FeatureService {
 		return new UserHasFeatureResponse(userHasFeature);
 	}
 
+	/**
+	 * @param email         User email
+	 * @param featureName   Feature name
+	 * @param featureEnable Whether to turn on/off the flag
+	 * @return true if record is updated otherwise false
+	 * @throws ResourceNotFound if user or feature not found when updating
+	 */
 	@Transactional
 	public boolean updateUserFeatureFlag(String email, String featureName, Boolean featureEnable) throws Exception {
 		boolean userHasFeature = userRepository.existsByEmailAndFeaturesName(email, featureName);

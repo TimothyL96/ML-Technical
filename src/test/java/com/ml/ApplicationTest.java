@@ -7,13 +7,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 @MicronautTest
-class MLTechnicalUserHasFeatureRequest {
+class ApplicationTest {
 
 	@Inject
 	EmbeddedApplication<?> application;
 
 	@Test
-	void testItWorks() {
+	void testMain() {
 		Assertions.assertTrue(application.isRunning());
 	}
 
