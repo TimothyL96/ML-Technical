@@ -14,6 +14,10 @@
         </encoder>
     </appender>
 
+    <!-- <logger name="io.micronaut.data.query" level="trace"/>-->
+    <!-- Binding parameters -->
+    <logger name="org.hibernate.type.descriptor.sql" level="info"/>
+
     <root level="info">
         <appender-ref ref="STDOUT"/>
     </root>

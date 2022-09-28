@@ -16,18 +16,25 @@ dependencies {
     annotationProcessor("io.micronaut:micronaut-http-validation")
     annotationProcessor("io.micronaut.openapi:micronaut-openapi")
     annotationProcessor("io.micronaut.serde:micronaut-serde-processor")
+
     implementation("io.micronaut:micronaut-http-client")
-    implementation("io.micronaut.data:micronaut-data-jdbc")
+    implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
     implementation("io.micronaut.liquibase:micronaut-liquibase")
     implementation("io.micronaut.serde:micronaut-serde-jackson")
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")
     implementation("io.swagger.core.v3:swagger-annotations")
     implementation("jakarta.annotation:jakarta.annotation-api")
     implementation("ch.qos.logback:logback-classic")
-    runtimeOnly("com.h2database:h2")
-    testImplementation("org.mockito:mockito-core")
     implementation("io.micronaut:micronaut-validation")
 
+    // Test
+    testImplementation("org.mockito:mockito-core")
+
+    // DB Connectors
+    runtimeOnly("mysql:mysql-connector-java")
+    runtimeOnly("com.h2database:h2")
+
+    // Liquibase
     liquibaseRuntime 'org.liquibase:liquibase-core:4.16.1'
     liquibaseRuntime 'mysql:mysql-connector-java:8.0.30'
     liquibaseRuntime 'info.picocli:picocli:4.6.3'
@@ -74,5 +81,4 @@ liquibase {
             referencePassword project.ext.properties.datasourceMainPassword
         }
     }
-    runList = project.ext.properties.runList ?: 'none'
 }
