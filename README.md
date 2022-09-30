@@ -1,5 +1,6 @@
 ## ML Technical Assessment
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/43ceeb6d4cff4d8ea830d8e03bb7da90)](https://app.codacy.com/gh/TimothyL96/ML-Technical?utm_source=github.com&utm_medium=referral&utm_content=TimothyL96/ML-Technical&utm_campaign=Badge_Grade_Settings)
 [![Java CI with Gradle](https://github.com/TimothyL96/ML-Technical/actions/workflows/gradle.yml/badge.svg)](https://github.com/TimothyL96/ML-Technical/actions/workflows/gradle.yml)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/43ceeb6d4cff4d8ea830d8e03bb7da90)](https://app.codacy.com/gh/TimothyL96/ML-Technical?utm_source=github.com&utm_medium=referral&utm_content=TimothyL96/ML-Technical&utm_campaign=Badge_Grade_Settings)
 [![Maintainability](https://api.codeclimate.com/v1/badges/99781e4c1dcc7d590ffe/maintainability)](https://codeclimate.com/github/TimothyL96/ML-Technical/maintainability)
